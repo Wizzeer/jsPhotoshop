@@ -16,12 +16,15 @@ btnRun.addEventListener('click', (e)=>{
     console.log(imageData);
     for(let i=0; i<imageData.data.length; i+=4)
     {
-        imageData.data[i] = Math.min(255, imageData.data[i] + 50);
-        imageData.data[i] = Math.min(255, imageData.data[i+1] + 50);
-        imageData.data[i] = Math.min(255, imageData.data[i+2] + 50);
+        imageData.data[i] = Math.min(255, imageData.data[i] + 20);
+        imageData.data[i] = Math.min(255, imageData.data[i+1] + 20);
+        imageData.data[i] = Math.min(255, imageData.data[i+2] + 20);
     }
     ctx.putImageData(imageData, 0, 0);
 });
 
-
+function sliderChange(val){
+    document.getElementById('sliderStatus').innerHTML=val;
+    document.getElementById("plotno").style.filter="brightness("+val+")";
+}
 

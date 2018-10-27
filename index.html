@@ -6,7 +6,11 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
    <!--<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />-->
-    
+    <style>
+        canvas{
+            
+        }
+    </style>
 </head>
 <body>
     <div class="content">
@@ -14,6 +18,9 @@
         <canvas width="300" height="300" id="plotno">
         
         </canvas>
+
+        <input type="range" min="0" max="2" step="0.01" value="1" data-filter="contrast" oninput="sliderChange(this.value)"/>
+        Slider value = <span id="sliderStatus">1</span>
     </div>
 <script src="js/main.js"></script>
 </body>
