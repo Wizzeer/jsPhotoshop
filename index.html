@@ -9,18 +9,48 @@
     <style>
         canvas{
             
+            margin: 20px;
+            float: left;
+        }
+
+        input{
+            margin-top: 40px;
+            margin-right: 10px;
+        }
+        button{
+            margin: 25px;
         }
     </style>
 </head>
 <body>
     <div class="content">
-        <button id="run">Pobierz piksele</button> 
-        <canvas width="300" height="300" id="plotno">
         
-        </canvas>
-
-        <input type="range" min="0" max="2" step="0.01" value="1" data-filter="contrast" oninput="sliderChange(this.value)"/>
-        Slider value = <span id="sliderStatus">1</span>
+        <div id="brightness">
+            <div id="contrast">
+                <div id="saturation">
+                    <canvas width="300" height="300" id="plotno"></canvas>
+                </div>
+            </div>
+        </div>
+        
+    
+        <!--Brightness-->
+        <input type="range" min="0" max="2" step="0.01" value="1" oninput="brightnessChange(this.value)"/>
+        Brightness : <span id="brightnessStatus">50 %</span>
+        <br>
+        <!--Contrast-->
+        <input type="range" min="0" max="3" step="0.01" value="1" oninput="contrastChange(this.value)"/>
+        Contrast : <span id="contrastStatus">33 %</span>
+        <br>
+        <!--Saturation-->
+        <input type="range" min="0" max="10" step="0.01" value="1" oninput="saturationChange(this.value)"/>
+        Saturation : <span id="saturationStatus">10 %</span>
+        <br>
+        <!--Blur-->
+        <input type="range" min="0" max="10" step="0.01" value="0" oninput="blurChange(this.value)"/>
+        Blur : <span id="blurStatus">0 %</span>
+        <br>
+        <button id="run">Pobierz piksele</button> 
     </div>
 <script src="js/main.js"></script>
 </body>

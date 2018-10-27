@@ -23,8 +23,24 @@ btnRun.addEventListener('click', (e)=>{
     ctx.putImageData(imageData, 0, 0);
 });
 
-function sliderChange(val){
-    document.getElementById('sliderStatus').innerHTML=val;
-    document.getElementById("plotno").style.filter="brightness("+val+")";
+function brightnessChange(val){
+    document.getElementById('brightnessStatus').innerHTML=Math.round(val/2*100)+" %";
+    document.getElementById("brightness").style.filter="brightness("+val+")";
 }
+
+function contrastChange(val){
+    document.getElementById('contrastStatus').innerHTML=Math.round(val/3*100)+" %";
+    document.getElementById("contrast").style.filter="contrast("+val+")";
+}
+
+function saturationChange(val){
+    document.getElementById('saturationStatus').innerHTML=Math.round(val*10)+" %";
+    document.getElementById("saturation").style.filter="saturate("+val+")";
+}
+
+function blurChange(val){
+    document.getElementById('blurStatus').innerHTML=Math.round(val*10)+" %";
+    document.getElementById("plotno").style.filter="blur("+val+"px)";
+}
+
 
