@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
    <!--<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />-->
     <style>
+        html{
+            background-color: rgb(235, 235, 238);
+        }
         canvas{
             
             margin: 20px;
@@ -28,7 +31,7 @@
         <div id="brightness">
             <div id="contrast">
                 <div id="saturation">
-                    <canvas width="300" height="300" id="plotno"></canvas>
+                    <canvas width="300" height="300" id="plotno" crossOrigin="anonymous"></canvas>
                 </div>
             </div>
         </div>
@@ -49,6 +52,12 @@
         <!--Blur-->
         <input type="range" min="0" max="10" step="0.01" value="0" oninput="blurChange(this.value)"/>
         Blur : <span id="blurStatus">0 %</span>
+        <br>
+        <input type="range" min="-100" max="100" step="1" value="0" oninput="canvasContrastChange(this.value)"/>
+        Canvas contrast: <span id="canvasContrastStatus">0 %</span>
+        <br>
+        <input type="range" min="0" max="3" step="0.1" value="1" oninput="canvasBrightnessChange(this.value)"/>
+        Canvas brightness: <span id="canvasBrightnessStatus">50 %</span>
         <br>
         <button id="run">Pobierz piksele</button> 
     </div>
